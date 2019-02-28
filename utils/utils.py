@@ -16,6 +16,8 @@ def get_requests_from_file(path):
     with open(path, 'r') as f:
         file_data = f.read()
         list1.append(file_data)
+    print(list1[1])
+    print(type(list1))
     return list1
 
 
