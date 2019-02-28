@@ -12,9 +12,11 @@ def get_requests_from_file(path):
     """
     Reads raw HTTP requests from given file.
     """
+    list1 = []
     with open(path, 'r') as f:
         file_data = f.read()
-    return file_data
+        list1.append(file_data)
+    return list1
 
 
 def batch_generator(inputs, lengths, num_epochs, batch_size, vocab):
