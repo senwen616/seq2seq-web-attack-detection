@@ -14,6 +14,7 @@ class Reader(object):
         self.vocab = vocab
 
         data = get_requests_from_file(data_path)
+        print(data[0])
         print("Downloaded {} samples".format(len(data)))
 
         map_result = map(self._process_request, data)
