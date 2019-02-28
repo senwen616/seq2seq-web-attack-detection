@@ -16,7 +16,7 @@ class Reader(object):
         data = get_requests_from_file(data_path)
         print("Downloaded {} samples".format(len(data)))
         print(data[1])
-        print(type[data])
+        print(type(data))
         map_result = map(self._process_request, data)
         self.data = [x[0] for x in map_result]
         self.lengths = [x[1] for x in map_result]
