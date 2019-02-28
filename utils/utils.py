@@ -3,7 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-
+import pandas as pd
 
 import numpy as np
 
@@ -12,10 +12,10 @@ def get_requests_from_file(path):
     """
     Reads raw HTTP requests from given file.
     """
-    list1 = []
-    with open(path, 'r') as f:
-        file_data = f.read()
-        list1.append(file_data)
+
+    df = pd.read_csv(path)
+    df = df.drop_duplicates()
+    list1 = np.array(df)
     print(list1[1])
     print(type(list1))
     return list1
