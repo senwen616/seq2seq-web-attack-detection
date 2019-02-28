@@ -15,9 +15,9 @@ def get_requests_from_file(path):
 
     df = pd.read_csv(path)
     df = df.drop_duplicates()
-    list1 = np.array(df)
-    print(list1[1])
-    print(type(list1))
+    list1 = df.values.tolist()
+    # print(list1[1])
+    # print(type(list1))
     return list1
 
 
