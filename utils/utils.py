@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import os
 import pandas as pd
-
+from itertools import chain
 import numpy as np
 
 
@@ -15,10 +15,11 @@ def get_requests_from_file(path):
 
     df = pd.read_csv(path)
     df = df.drop_duplicates()
-    list1 = df.values.tolist()
+    data = df.values.tolist()
+    data = list(chain.from_iterable(data))
     # print(list1[1])
     # print(type(list1))
-    return list1
+    return data
 
 
 def batch_generator(inputs, lengths, num_epochs, batch_size, vocab):
