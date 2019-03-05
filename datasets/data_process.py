@@ -33,7 +33,6 @@ def process1(_str):
     return str1
 
 
-
 def process2(_str):
     """
         process the too long behavior sequence
@@ -65,10 +64,10 @@ def process3(_str):
         if i < 50 and _list[i] != _list[i + 1]:
             list1.append(_list[i])
 
-        elif _list[i].strip() != "q" and _list[i] != 'b' and _list[i] != 'p' and _list[i] != 'f' and _list[i] != 'h' and \
-                _list[i] != 'g' and _list[i] != 'c' and _list[i] != 'r' and _list[i] != 's' and _list[i] != 'i' and \
-                _list[i] != 't' and _list[i] != 'j' and _list[i] != 'm' and _list[i] != 'l' and _list[i] != 'u' and \
-                _list[i] != 'k' and _list[i] != 'v' and _list[i] != 'n':
+        elif _list[i].strip() != "q" and _list[i] != 'b' and _list[i] != 'p' and _list[i] != 'f' and _list[i] != 'h' \
+                and _list[i] != 'g' and _list[i] != 'c' and _list[i] != 'r' and _list[i] != 's' and _list[i] != 'i' \
+                and _list[i] != 't' and _list[i] != 'j' and _list[i] != 'm' and _list[i] != 'l' and _list[i] != 'u' \
+                and _list[i] != 'k' and _list[i] != 'v' and _list[i] != 'n':
             list1.append(_list[i])
     list1.append(_list[-1])
     str1 = ''.join(list1)
@@ -101,9 +100,9 @@ def process5(_str):
         if i < 70 and _list[i] != _list[i + 1]:
             list1.append(_list[i])
 
-        elif _list[i].strip() != "A" and _list[i] != 'x' and _list[i] != 'C' and _list[i] != 'o' and _list[i] != 'E' and \
-                _list[i] != 'w' and _list[i] != 'B' and _list[i] != 'x' and _list[i] != 'I' and _list[i] != 'z' and \
-                _list[i] != 'L':
+        elif _list[i].strip() != "A" and _list[i] != 'x' and _list[i] != 'C' and _list[i] != 'o' and _list[i] != 'E' \
+                and _list[i] != 'w' and _list[i] != 'B' and _list[i] != 'x' and _list[i] != 'I' and _list[i] != 'z' \
+                and _list[i] != 'L':
             list1.append(_list[i])
     list1.append(_list[-1])
     str1 = ''.join(list1)

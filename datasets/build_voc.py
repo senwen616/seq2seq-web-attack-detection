@@ -1,12 +1,8 @@
 from __future__ import print_function
-import numpy as np
-import re
 import itertools
 import codecs
 from collections import Counter
-import jieba
-import nltk
-from nltk import word_tokenize
+
 
 PAD = "<PAD>"
 EOS = "<EOS>"
@@ -28,7 +24,6 @@ def build_vocab(sentences, vocab_size=80):
     return [vocabulary, vocabulary_inv]
 
 
-
 def load_data():
     texts = []
 
@@ -36,6 +31,8 @@ def load_data():
         for line in f:
             texts.append(list(line.strip()))
     return texts
+
+
 a = load_data()
 vocabulary, vocabulary_inv = build_vocab(a)
 with open('vocab.json', 'w') as f:
