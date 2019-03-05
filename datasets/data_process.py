@@ -1,6 +1,4 @@
-import sys
 import pandas as pd
-import numpy as np
 import random
 from threading import Lock
 from itertools import chain
