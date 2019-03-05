@@ -22,7 +22,7 @@ class Vocabulary():
         try:
             text = text.decode('utf-8')
             characters = list(text)
-        except Exception as e:
+        except:
             characters = ['<UNK>']
 
         characters.append('<EOS>')
