@@ -150,7 +150,7 @@ def ge_anoma():
 
 
 def main():
-    readfile('ip_behavior_20190111', 'train2.txt')
+    readfile('ip_behavior_20180915', 'train2.txt')
     lock = Lock()
     if lock.acquire():
         with open('train_process1.txt', 'w') as f:

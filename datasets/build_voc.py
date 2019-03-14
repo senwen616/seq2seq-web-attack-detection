@@ -10,7 +10,7 @@ UNK = "<UNK>"
 GO = "<GO>"
 
 
-def build_vocab(sentences, vocab_size=80):
+def build_vocab(sentences, vocab_size=84):
     """
     Builds a vocabulary mapping from word to index based on the sentences.
     Returns vocabulary mapping and inverse vocabulary mapping.
@@ -27,7 +27,7 @@ def build_vocab(sentences, vocab_size=80):
 def load_data():
     texts = []
 
-    with codecs.open("train_.txt", "r", "utf-8") as f:
+    with codecs.open("voc.txt", "r", "utf-8") as f:
         for line in f:
             texts.append(list(line.strip()))
     return texts
