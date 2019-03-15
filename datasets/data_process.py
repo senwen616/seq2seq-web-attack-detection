@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+import os
 from threading import Lock
 from itertools import chain
 
@@ -11,8 +12,26 @@ def readfile(in_file, out_file):
     fileHandle = open(out_file, 'w')
     for line in open(in_file):
         l = line.split('\t')
-        fileHandle.write(l[1])
+        try:
+            fileHandle.write(l[1])
+        except:
+            pass
 
+def readfile_train(out_file):
+    """
+    load the origin data
+    """
+
+    path = os.getcwd()
+    file_names = os.listdir(path+'/origin_data')
+    fileHandle = open(out_file, 'w')
+    for file in file_names:
+        for line in open('origin_data/' + file):
+            l = line.split('\t')
+            try:
+                fileHandle.write(l[1])
+            except:
+                pass
 
 # 去除原始数据中连续重复的单项行为
 def process1(_str):
@@ -113,7 +132,7 @@ def get_input_from_file(path):
     """
     Reads raw user behavior data from given file.
     """
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, error_bad_lines=False)
     df = df.drop_duplicates()
     data = df.values.tolist()
     data = list(chain.from_iterable(data))
@@ -150,12 +169,13 @@ def ge_anoma():
 
 
 def main():
-    readfile('ip_behavior_20180915', 'train2.txt')
+    readfile_train('train.txt')
+    #readfile('ip_behavior_20180919', 'train2.txt')
     lock = Lock()
     if lock.acquire():
         with open('train_process1.txt', 'w') as f:
 
-            for x in open('train2.txt', 'r'):
+            for x in open('train.txt', 'r'):
                 st = process1(x)
                 f.write(str(st))
     lock.release()
@@ -189,10 +209,12 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+
+    #main()
     # Count('train_.txt')
     # test("train_.txt")
-    a = get_input_from_file('train_process4.txt')
-    b = open('test_.csv', 'w')
+    a = get_input_from_file('train_.csv')
+    b = open('train.csv', 'w')
     for i in a:
         b.write(i + '\n')
+
